@@ -10,12 +10,14 @@ usage() {
 }
 
 run_latex() {
-    if ! eval ${TEX_CMD} > /dev/null ; then
+    echo "${LATEX_CMD}"
+    if ! eval ${LATEX_CMD} > /dev/null ; then
         exit 2
     fi
 }
 
 run_biber() {
+    echo "${BIBER_CMD}"
     eval ${BIBER_CMD} | grep -E "^(WARN|ERROR)"
     if ! [ "${PIPESTATUS[0]}" -eq 0 ] ; then
         error
@@ -30,7 +32,7 @@ full() {
     run_latex
 }
 
-if [ "$#" -lt 1 ]; then
+if [ "$#" -eq 0 ]; then
     usage
 fi
 
@@ -71,7 +73,7 @@ done
 FILE="$1"
 
 if [ -z "${JOBNAME}" ]; then
-    JOBNAME="${FILE%.tex}"
+    JOBNAME=$(basename "${FILE%.tex}")
 fi
 
 if [ -z "${BUILDDIR}" ]; then
@@ -82,10 +84,12 @@ if [ -z "${FAST}" ]; then
     FAST=false
 fi
 
-TEX_ARG="--shell-escape --halt-on-error --interaction=batchmode --output-directory=${BUILDDIR} --jobname=\"${JOBNAME}\" \"${FILE}\""
-TEX_CMD="lualatex ${TEX_ARG}"
+SCRIPT_DIR=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)
+LATEX_ENV="TEXINPUTS=\"${SCRIPT_DIR}:${TEXINPUTS}\""
+LATEX_ARG="--shell-escape --halt-on-error --interaction=batchmode --output-directory=\"${BUILDDIR}/\" --jobname=\"${JOBNAME}\" \"${FILE}\""
+LATEX_CMD="env ${LATEX_ENV} lualatex ${LATEX_ARG}"
 BIBER_ARG="--logfile \"${BUILDDIR}/${JOBNAME}.blg\" --outfile \"${BUILDDIR}/${JOBNAME}.bbl\" \"${BUILDDIR}/${JOBNAME}.bcf\""
-BIBER_CMD="biber"
+BIBER_CMD="env biber${BIBER_ARG}"
 
 if "${FAST}" ; then
     fast
