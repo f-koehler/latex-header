@@ -11,4 +11,17 @@
 \DeclareDocumentCommand\diag{}{\operatorname{diag}}
 \DeclareDocumentCommand\ker{}{\operatorname{ker}}
 
+% gamma matrices
+\DeclareDocumentCommand\mgamma{}{\mathup{\gamma}}
+\DeclareDocumentCommand\GammaT{}{\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&-1&0\\0&0&0&-1\end{pmatrix}}
+\DeclareDocumentCommand\GammaX{}{\begin{pmatrix}0&0&0&1\\0&0&1&0\\0&-1&0&0\\-1&0&0&0\end{pmatrix}}
+\DeclareDocumentCommand\GammaY{}{\begin{pmatrix}0&0&0&-i\\0&0&i&0\\0&i&0&0\\-i&0&0&0\end{pmatrix}}
+\DeclareDocumentCommand\GammaZ{}{\begin{pmatrix}0&0&1&0\\0&0&0&-1\\-1&0&0&0\\0&1&0&0\end{pmatrix}}
+
+% pauli matrices
+\DeclareDocumentCommand\mpauli{}{\mathup{\sigma}}
+\DeclareDocumentCommand\PauliX{}{\begin{pmatrix}0&1\\1&0\end{pmatrix}}
+\DeclareDocumentCommand\PauliY{}{\begin{pmatrix}0&-i\\i&0\end{pmatrix}}
+\DeclareDocumentCommand\PauliZ{}{\begin{pmatrix}1&0\\-1&0\end{pmatrix}}
+
 \ExplSyntaxOff{}

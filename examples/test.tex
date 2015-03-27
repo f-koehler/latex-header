@@ -2,8 +2,10 @@
 
 \input{base}
 \input{math}
+\input{physics}
 
 \begin{document}
+  \section{Math}
   Custom math operators:
   \begin{align*}
     &\const
@@ -43,5 +45,28 @@
   \begin{align*}
     &\m{A} & &\mzero & &\mone & &\mtrans{A} & &\mdagger{A} & &\mconj{A} \\
     &\Tr{\m{A}} & &\det{\m{A}} & &\diag{\m{A}} & &\ker{\m{A}}
+  \end{align*}
+
+  Gamma matrices:
+  \begin{align*}
+    \mgamma^0&=\GammaT \\
+    \mgamma^1&=\GammaX \\
+    \mgamma^2&=\GammaY \\
+    \mgamma^3&=\GammaZ
+  \end{align*}
+
+  Pauli matrices:
+  \begin{align*}
+    \mpauli_x&=\PauliX \\
+    \mpauli_y&=\PauliY \\
+    \mpauli_z&=\PauliZ
+  \end{align*}
+
+  \section{Physics}
+  Units:
+  \begin{align*}
+    \SIrange{1}{2}{\volt} \\
+    \SI{1000}{\becquerel} \\
+    \si{\angstrom}
   \end{align*}
 \end{document}
