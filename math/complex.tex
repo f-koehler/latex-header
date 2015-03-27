@@ -1,0 +1,9 @@
+\ExplSyntaxOn{}
+
+% unicode-math would otherwise reset these
+\AtBeginDocument{%
+  \DeclareDocumentCommand\Re{}{\operatorname{Re}}
+  \DeclareDocumentCommand\Im{}{\operatorname{Im}}
+}
+
+\ExplSyntaxOff{}
