@@ -1,0 +1,13 @@
+\documentclass{scrartcl}
+
+\input{latex-header/base.tex}
+\input{latex-header/math.tex}
+\input{latex-header/physics.tex}
+
+\parindent0pt
+
+\ExplSyntaxOn{}
+
+\DeclareDocumentCommand\Header{}{\LARGE\textbf{\Course}\hfill\textbf{\Sheet}\\[5pt]\normalsize\Authors\hfill\Semester\\\noindent\makebox[\linewidth]{\rule{\textwidth}{1pt}}}
+
+\ExplSyntaxOff{}
