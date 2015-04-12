@@ -169,6 +169,12 @@
 
 % isotopes
 \usepackage{isotope}
+\ExplSyntaxOn{}
+
+\DeclareDocumentCommand\up{\uparrow}
+\DeclareDocumentCommand\down{\downarrow}
+
+\ExplSyntaxOff{}
 \sisetup{exponent-product=\cdot, output-product=\cdot}
 \sisetup{separate-uncertainty}
 \sisetup{range-phrase=%
