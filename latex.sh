@@ -26,9 +26,11 @@ run_biber() {
 
 fast() {
     run_latex
+    run_latex
 }
 
 full() {
+    run_latex
     run_latex
 }
 

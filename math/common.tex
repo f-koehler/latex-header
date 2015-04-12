@@ -1,6 +1,9 @@
 \ExplSyntaxOn{}
 
+\DeclareDocumentCommand\numberthis{}{\addtocounter{equation}{1}\tag{\theequation}}
+
 \DeclareDocumentCommand\const{}{\mathup{const}}
 \DeclareDocumentCommand\inv{m}{{#1}^{-1}}
+\DeclareDocumentCommand\ev{m}{{\langle {#1} \rangle}}
 
 \ExplSyntaxOff{}
