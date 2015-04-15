@@ -9,6 +9,12 @@ usage() {
     exit 1
 }
 
+create_dir() {
+    if [ ! -d ${BUILDDIR} ]; then
+        mkdir ${BUILDDIR}
+    fi
+}
+
 run_latex() {
     echo "${LATEX_CMD}"
     if ! eval ${LATEX_CMD} > /dev/null ; then
@@ -25,11 +31,12 @@ run_biber() {
 }
 
 fast() {
-    run_latex
+    create_dir
     run_latex
 }
 
 full() {
+    create_dir
     run_latex
     run_latex
 }
