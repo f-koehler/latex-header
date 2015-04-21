@@ -11,6 +11,7 @@ touch matplotlib.tex
 
 add "base/packages.tex"
 add "base/lua.tex"
+add "base/code.tex"
 add "math/packages.tex"
 add "math/common.tex"
 add "math/complex.tex"
