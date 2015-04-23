@@ -1,0 +1,25 @@
+\ExplSyntaxOn{}
+
+\DeclareDocumentCommand\Title{}{\frame{\titlepage}}
+\DeclareDocumentCommand\Toc{m}{%
+  \begin{frame}
+    \frametitle{#1}
+    \tableofcontents
+  \end{frame}
+}
+\DeclareDocumentCommand\CurrentToc{m}{%
+  \begin{frame}
+    \frametitle{#1}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+\DeclareDocumentCommand\AutoTocSection{m}{%
+  \AtBeginSection[]{%
+    \begin{frame}
+      \frametitle{#1}
+      \tableofcontents[currentsection]
+    \end{frame}
+  }
+}
+
+\ExplSyntaxOff{}

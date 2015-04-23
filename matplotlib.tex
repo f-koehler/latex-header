@@ -6,6 +6,9 @@
 \usepackage{luatexbase}
 \usepackage{lualatex-math}
 
+% listings (has to be before polyglossia !!!)
+\usepackage[outputdir=build]{minted}
+
 % typography
 \usepackage{polyglossia}
 \setdefaultlanguage[spelling=new, babelshorthands=true]{german}
@@ -31,11 +34,14 @@
 \usepackage{url}
 
 % captions
-\usepackage{subcaption}
+\usepackage{caption}
 
 % FloatBarrier
 \usepackage[section]{placeins}
 \RequireLuaModule{lualibs}
+\ExplSyntaxOn{}
+
+\ExplSyntaxOff{}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
@@ -171,8 +177,8 @@
 \usepackage{isotope}
 \ExplSyntaxOn{}
 
-\DeclareDocumentCommand\up{\uparrow}
-\DeclareDocumentCommand\down{\downarrow}
+\DeclareDocumentCommand\up{}{\uparrow}
+\DeclareDocumentCommand\down{}{\downarrow}
 
 \ExplSyntaxOff{}
 \sisetup{exponent-product=\cdot, output-product=\cdot}
