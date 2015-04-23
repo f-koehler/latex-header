@@ -1,7 +1,5 @@
 \ExplSyntaxOn{}
 
-\DeclareDocumentCommand\diff{o}{%
-  \IfNoValueTF{#1}{\mathup{d}}{\mathup{d}^#1}
-}
+\DeclareDocumentCommand\diff{o}{\IfNoValueTF{#1}{\mathup{d}}{\mathup{d}^#1}}
 
 \ExplSyntaxOff{}
