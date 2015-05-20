@@ -1,10 +1,15 @@
 % makes writing commands much easier
 \usepackage{xparse}
 
+\usepackage{ifluatex}
+\usepackage{ifxetex}
+
 % lua base packages
-\usepackage{luacode}
-\usepackage{luatexbase}
-\usepackage{lualatex-math}
+\ifluatex{}
+  \usepackage{luacode}
+  \usepackage{luatexbase}
+  \usepackage{lualatex-math}
+\fi{}
 
 % typography
 \usepackage{polyglossia}

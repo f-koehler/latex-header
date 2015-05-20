@@ -5,7 +5,7 @@ usage() {
     echo "$0 --help|-h"
     echo "  Print this help message."
     echo ""
-    echo "$0 [-f|--fast] [-j|--jobname <jobname>] [-d|--build-dir <dir>=build] <texfile>"
+    echo "$0 [-f|--fast] [-b|--backend backend] [-j|--jobname <jobname>] [-d|--build-dir <dir>=build] <texfile>"
     exit 1
 }
 
@@ -59,6 +59,12 @@ while [ "$#" -gt 1 ]; do
         "--fast")
             FAST=true
             ;;
+        "-b")
+            BACKEND="$2"
+            ;;
+        "--backend")
+            BACKEND="$2"
+            ;;
         "-j")
             JOBNAME="$2"
             shift
@@ -81,6 +87,10 @@ done
 
 FILE="$1"
 
+if [ -z "${BACKEND}" ]; then
+    BACKEND=xelatex
+fi
+
 if [ -z "${JOBNAME}" ]; then
     JOBNAME=$(basename "${FILE%.tex}")
 fi
@@ -96,7 +106,7 @@ fi
 SCRIPT_DIR=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)
 LATEX_ENV="TEXINPUTS=\"${SCRIPT_DIR}:${TEXINPUTS}\""
 LATEX_ARG="--shell-escape --halt-on-error --interaction=batchmode --output-directory=\"${BUILDDIR}/\" --jobname=\"${JOBNAME}\" \"${FILE}\""
-LATEX_CMD="env ${LATEX_ENV} lualatex ${LATEX_ARG}"
+LATEX_CMD="env ${LATEX_ENV} ${BACKEND} ${LATEX_ARG}"
 BIBER_ARG="--logfile \"${BUILDDIR}/${JOBNAME}.blg\" --outfile \"${BUILDDIR}/${JOBNAME}.bbl\" \"${BUILDDIR}/${JOBNAME}.bcf\""
 BIBER_CMD="env biber${BIBER_ARG}"
 

@@ -1,5 +1,8 @@
 \input{base/packages}
-\input{base/lua}
+
+\ifluatex
+  \input{base/lua}
+\fi
 
 % subcaption
 \usepackage{subcaption}
