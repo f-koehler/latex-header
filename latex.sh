@@ -88,7 +88,7 @@ done
 FILE="$1"
 
 if [ -z "${BACKEND}" ]; then
-    BACKEND=xelatex
+    BACKEND=lualatex
 fi
 
 if [ -z "${JOBNAME}" ]; then
