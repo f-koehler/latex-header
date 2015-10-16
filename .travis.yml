@@ -6,6 +6,7 @@ install:
     - tlmgr install $(<tools/packages) || true
 script:
     - lualatex test.tex
+    - chktex test.tex
 # cache:
 #     directories:
 #         - ~/tl
