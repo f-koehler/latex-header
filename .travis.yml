@@ -3,6 +3,9 @@ before_install:
     - tools/travis-tl.sh
     - export PATH=~/tl/bin/x86_64-linux:$PATH
 install:
-    - tlmgr --version
+    - tlmgr install $(<tools/packages) || true
 script:
-    - tlmgr --version
+    - lualatex test.tex
+# cache:
+#     directories:
+#         - ~/tl
