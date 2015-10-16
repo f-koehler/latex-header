@@ -5,8 +5,9 @@ before_install:
 install:
     - tlmgr install $(<tools/packages) || true
 script:
-    - lualatex test.tex
-    - chktex test.tex
+    - cd tests
+    - make
+    - make check
 # cache:
 #     directories:
 #         - ~/tl

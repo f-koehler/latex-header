@@ -7,12 +7,12 @@ etoolbox
 euenc
 filehook
 graphics
-graphicx
 ifluatex
 ifxetex
 koma-script
 latex
 latex-bin
+latexmk
 lm-math
 lualatex-math
 luaotfload
