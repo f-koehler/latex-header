@@ -1,0 +1,91 @@
+\NeedsTeXFormat{LaTeX2e}[2015/10/01]
+\ProvidesPackage{fkoehler}
+
+\RequirePackage{xparse}
+\ExplSyntaxOn{}
+
+
+
+% packages to determine which LaTeX implementation is used
+\RequirePackage{ifluatex}
+\RequirePackage{ifxetex}
+
+% packages from the AMS
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+
+% use unicode in math typesetting
+\RequirePackage[
+  bold-style=ISO,
+  math-style=ISO,
+  nabla=upright,
+  partial=upright,
+  sans-style=italic,
+]{unicode-math}
+
+
+% decorators for scalars, vectors, matrices
+\DeclareDocumentCommand\trans{m}{{#1}^{\mathsf{T}}}
+\DeclareDocumentCommand\conj{m}{{#1}^*}
+\DeclareDocumentCommand\herm{m}{{#1}^{\mathsf{H}}}
+\DeclareDocumentCommand\daggered{m}{{#1}^\dagger}
+\DeclareDocumentCommand\inv{m}{{#1}^{-1}}
+
+% declare commands for vectors and matrices
+\DeclareDocumentCommand\m{m}{{\mathbfit{#1}}}
+\DeclareDocumentCommand\v{m}{{\mathbfit{#1}}}
+
+% decorated versions of matrices
+\DeclareDocumentCommand\mtrans{m}{\trans{\m{#1}}}
+\DeclareDocumentCommand\mconj{m}{\conj{\m{#1}}}
+\DeclareDocumentCommand\mherm{m}{\herm{\m{#1}}}
+\DeclareDocumentCommand\mdaggered{m}{\daggered{\m{#1}}}
+\DeclareDocumentCommand\minv{m}{\inv{\m{#1}}}
+
+% decorated versions of vectors
+\DeclareDocumentCommand\vtrans{m}{\trans{\v{#1}}}
+\DeclareDocumentCommand\vconj{m}{\conj{\v{#1}}}
+\DeclareDocumentCommand\vherm{m}{\herm{\v{#1}}}
+\DeclareDocumentCommand\vdaggered{m}{\daggered{\v{#1}}}
+
+% complex numbers
+\AtBeginDocument{%
+  \DeclareDocumentCommand\Re{}{\operatorname{Re}}
+  \DeclareDocumentCommand\Im{}{\operatorname{Im}}
+}
+\DeclareDocumentCommand\iu{}{\mathcal{i}}
+
+% differentials
+\DeclareDocumentCommand\diff{o}{\IfNoValueTF{#1}{\mathup{d}}{\mathup{d}^{#1}}}
+
+% trigonometric and hyperbolic functions
+\DeclareDocumentCommand\cos{}{\operatorname{cos}}
+\DeclareDocumentCommand\sin{}{\operatorname{sin}}
+\DeclareDocumentCommand\tan{}{\operatorname{tan}}
+\DeclareDocumentCommand\cot{}{\operatorname{cot}}
+\DeclareDocumentCommand\csc{}{\operatorname{csc}}
+\DeclareDocumentCommand\sec{}{\operatorname{sec}}
+\DeclareDocumentCommand\arccos{}{\operatorname{arccos}}
+\DeclareDocumentCommand\arcsin{}{\operatorname{arcsin}}
+\DeclareDocumentCommand\arctan{}{\operatorname{arctan}}
+\DeclareDocumentCommand\arccot{}{\operatorname{arccot}}
+\DeclareDocumentCommand\arccsc{}{\operatorname{arccsc}}
+\DeclareDocumentCommand\arcsec{}{\operatorname{arcsec}}
+\DeclareDocumentCommand\cosh{}{\operatorname{cosh}}
+\DeclareDocumentCommand\sinh{}{\operatorname{sinh}}
+\DeclareDocumentCommand\tanh{}{\operatorname{tanh}}
+\DeclareDocumentCommand\coth{}{\operatorname{coth}}
+\DeclareDocumentCommand\csch{}{\operatorname{csch}}
+\DeclareDocumentCommand\sech{}{\operatorname{sech}}
+\DeclareDocumentCommand\arcosh{}{\operatorname{arcosh}}
+\DeclareDocumentCommand\arsinh{}{\operatorname{arsinh}}
+\DeclareDocumentCommand\artanh{}{\operatorname{artanh}}
+\DeclareDocumentCommand\arcoth{}{\operatorname{arcoth}}
+\DeclareDocumentCommand\arcsch{}{\operatorname{arcsch}}
+\DeclareDocumentCommand\arsech{}{\operatorname{arsech}}
+\DeclareDocumentCommand\sinc{}{\operatorname{sinc}}
+
+\ExplSyntaxOff{}
+
+\endinput
