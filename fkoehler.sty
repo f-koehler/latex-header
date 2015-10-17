@@ -24,6 +24,17 @@
   sans-style=italic,
 ]{unicode-math}
 
+% dirac notation
+\RequirePackage{braket}
+
+% set up unit typesetting
+\RequirePackage[
+  binary-units=true,
+  exponent-product=\cdot,
+  output-product=\cdot,
+  range-phrase=\ifmmode\mathbin{-}\else\thinspace\textendash\thinspace\fi,
+  separate-uncertainty=true,
+]{siunitx}
 
 % decorators for scalars, vectors, matrices
 \DeclareDocumentCommand\trans{m}{{#1}^{\mathsf{T}}}
@@ -87,15 +98,6 @@
 \DeclareDocumentCommand\arcsch{}{\operatorname{arcsch}}
 \DeclareDocumentCommand\arsech{}{\operatorname{arsech}}
 \DeclareDocumentCommand\sinc{}{\operatorname{sinc}}
-
-
-\RequirePackage[
-  binary-units=true,
-  exponent-product=\cdot,
-  output-product=\cdot,
-  range-phrase=\ifmmode\mathbin{-}\else\thinspace\textendash\thinspace\fi,
-  separate-uncertainty=true,
-]{siunitx}
 
 \ExplSyntaxOff{}
 
