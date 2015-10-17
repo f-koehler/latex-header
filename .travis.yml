@@ -9,7 +9,7 @@ install:
     - tlmgr install $(<tools/packages) || true
 script:
     - tools/setup-hooks.sh
-    - git checkout HEAD
+    - git checkout
     - cd tests
     - make
     - make check

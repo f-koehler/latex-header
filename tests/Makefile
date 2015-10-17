@@ -7,7 +7,7 @@ all: ${PDF_FILES}
 check: ${TEX_FILES} ../fkoehler.sty
 	chktex -W
 	chktex -q ${TEX_FILES}
-lacheck:
+lacheck: ${TEX_FILES}
 	../tools/lacheck.sh $^
 %.pdf: %.tex ../fkoehler.sty
 	latexmk -interaction=nonstopmode --use-make -${LATEXMK_BACKEND} $<
