@@ -45,6 +45,6 @@ fi
 chmod g+x .git/hooks/$1
 }
 
-create_hook post_checkout
-create_hook post_commit
-create_hook post_merge
+create_hook post-checkout
+create_hook post-commit
+create_hook post-merge
