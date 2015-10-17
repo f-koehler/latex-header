@@ -42,7 +42,7 @@ git --no-pager log -1 --date=short --decorate=short \
     ]{gitexinfo}" HEAD > .git/gitHeadInfo.gin
 EOF
 fi
-chmod g+x .git/hooks/$1
+chmod 755 .git/hooks/$1
 }
 
 create_hook post-checkout
