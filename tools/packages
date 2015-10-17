@@ -21,6 +21,7 @@ lacheck
 latex
 latex-bin
 latexmk
+lipsum
 lm-math
 lualatex-math
 luaotfload
@@ -30,6 +31,7 @@ oberdiek
 pdftex-def
 pgf
 siunitx
+todonotes
 tools
 ucharcat
 unicode-math
