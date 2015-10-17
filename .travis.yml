@@ -7,8 +7,9 @@ before_install:
     - export PATH=~/tl/bin/x86_64-linux:$PATH
 install:
     - tlmgr install $(<tools/packages) || true
-    - tools/setup-hooks.sh
 script:
+    - tools/setup-hooks.sh
+    - git checkout HEAD
     - cd tests
     - make
     - make check
