@@ -30,4 +30,5 @@ ucharcat
 unicode-math
 xetex
 xetex-def
+xstring
 xunicode
