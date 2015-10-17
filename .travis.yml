@@ -1,4 +1,7 @@
 language: perl
+env:
+    - LATEXMK_BACKEND=xelatex
+    - LATEXMK_BACKEND=lualatex
 before_install:
     - tools/travis-tl.sh
     - export PATH=~/tl/bin/x86_64-linux:$PATH

@@ -21,5 +21,7 @@ oberdiek
 pdftex-def
 ucharcat
 unicode-math
+xetex
+xetex-def
 xparse
 xunicode
