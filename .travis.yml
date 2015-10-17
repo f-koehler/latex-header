@@ -11,6 +11,6 @@ script:
     - cd tests
     - make
     - make check
-# cache:
-#     directories:
-#         - ~/tl
+cache:
+    directories:
+        - ~/tl

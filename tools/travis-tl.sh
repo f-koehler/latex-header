@@ -1,4 +1,19 @@
 #!/bin/bash
+
+if [[ -d ${HOME}/tl/bin/x86_64-linux ]]; then
+    echo "directory \"${HOME}/tl/bin/x86_64-linux\" exists, prepending path ..."
+    export PATH=${HOME}/tl/bin/x86_64-linux:${PATH}
+fi
+
+TLMGR=$(command -v tlmgr)
+if [[ ! -z ${TLMGR} ]]; then
+    echo "found local tlmgr \"${TLMGR}\", performe update ..."
+    tlmgr update --all --self
+    exit 0
+fi
+
+echo "local tlmgr is not present, perform minimal TeXLive install ..."
+
 cd tools
 [[ ! -e tl-installer.tar.gz ]] && wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz -O tl-installer.tar.gz
 mkdir -p tl-installer ~/tl/temp
