@@ -33,21 +33,23 @@
 \DeclareDocumentCommand\inv{m}{{#1}^{-1}}
 
 % declare commands for vectors and matrices
-\DeclareDocumentCommand\m{m}{{\mathbfit{#1}}}
-\DeclareDocumentCommand\v{m}{{\mathbfit{#1}}}
+\AtBeginDocument{%
+  \DeclareDocumentCommand\mat{m}{{\mathbfit{#1}}}
+  \DeclareDocumentCommand\vec{m}{{\mathbfit{#1}}}
+}
 
 % decorated versions of matrices
-\DeclareDocumentCommand\mtrans{m}{\trans{\m{#1}}}
-\DeclareDocumentCommand\mconj{m}{\conj{\m{#1}}}
-\DeclareDocumentCommand\mherm{m}{\herm{\m{#1}}}
-\DeclareDocumentCommand\mdaggered{m}{\daggered{\m{#1}}}
-\DeclareDocumentCommand\minv{m}{\inv{\m{#1}}}
+\DeclareDocumentCommand\matTrans{m}{\trans{\mat{#1}}}
+\DeclareDocumentCommand\matConj{m}{\conj{\mat{#1}}}
+\DeclareDocumentCommand\matHerm{m}{\herm{\mat{#1}}}
+\DeclareDocumentCommand\matDaggered{m}{\daggered{\mat{#1}}}
+\DeclareDocumentCommand\matInv{m}{\inv{\mat{#1}}}
 
 % decorated versions of vectors
-\DeclareDocumentCommand\vtrans{m}{\trans{\v{#1}}}
-\DeclareDocumentCommand\vconj{m}{\conj{\v{#1}}}
-\DeclareDocumentCommand\vherm{m}{\herm{\v{#1}}}
-\DeclareDocumentCommand\vdaggered{m}{\daggered{\v{#1}}}
+\DeclareDocumentCommand\vecTrans{m}{\trans{\vec{#1}}}
+\DeclareDocumentCommand\vecConj{m}{\conj{\vec{#1}}}
+\DeclareDocumentCommand\vecHerm{m}{\herm{\vec{#1}}}
+\DeclareDocumentCommand\vecDaggered{m}{\daggered{\vec{#1}}}
 
 % complex numbers
 \AtBeginDocument{%
