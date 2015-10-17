@@ -1,11 +1,15 @@
 #!/bin/bash
-if [[ -f .git/hooks/post-checkout ]]; then
-	echo "hook \".git/hooks/post-checkout\" already present, skipping ..."
-    exit 0
-fi
 
-echo "setting up hook ..."
-cat > .git/hooks/post-checkout << EOF
+function create_hook {
+if [[ -z $1 ]]; then
+    echo "No hook specified!"
+    exit 1
+fi
+if [[ -f .git/hooks/$1 ]]; then
+	echo "hook \"$1\" already present, skipping ..."
+else
+    echo "setting up hook \"$1\" ..."
+    cat > .git/hooks/$1 << EOF
 #!/bin/sh
 # Copyright 2014 Brent Longborough
 # Part of gitinfo2 package Version 2
@@ -37,5 +41,10 @@ git --no-pager log -1 --date=short --decorate=short \
         reltag={$RELTAG}
     ]{gitexinfo}" HEAD > .git/gitHeadInfo.gin
 EOF
+fi
+chmod g+x .git/hooks/$1
+}
 
-chmod g+x .git/hooks/post-checkout
+create_hook post_checkout
+create_hook post_commit
+create_hook post_merge
