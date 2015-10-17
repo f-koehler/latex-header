@@ -10,6 +10,7 @@ graphics
 ifluatex
 ifxetex
 koma-script
+l3­pack­ag
 latex
 latex-bin
 latexmk
@@ -19,9 +20,10 @@ luaotfload
 luatexbase
 oberdiek
 pdftex-def
+siunitx
+tools
 ucharcat
 unicode-math
 xetex
 xetex-def
-xparse
 xunicode

@@ -88,6 +88,15 @@
 \DeclareDocumentCommand\arsech{}{\operatorname{arsech}}
 \DeclareDocumentCommand\sinc{}{\operatorname{sinc}}
 
+
+\RequirePackage[
+  binary-units=true,
+  exponent-product=\cdot,
+  output-product=\cdot,
+  range-phrase=\ifmmode\mathbin{-}\else\thinspace\textendash\thinspace\fi,
+  separate-uncertainty=true,
+]{siunitx}
+
 \ExplSyntaxOff{}
 
 \endinput

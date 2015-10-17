@@ -4,13 +4,11 @@ PDF_FILES:=$(patsubst %.tex,%.pdf,${TEX_FILES})
 LATEXMK_BACKEND ?= lualatex
 
 all: ${PDF_FILES}
-check: ${TEX_FILES}
+check: ${TEX_FILES} ../fkoehler.sty
 	chktex -W
 	chktex -q ${TEX_FILES}
-%.pdf: %.tex
+%.pdf: %.tex ../fkoehler.sty
 	latexmk --use-make -${LATEXMK_BACKEND} $<
-%.chk: %.tex
-	chktex -q $< &> $@
 
 .PHONY: clean
 clean:
