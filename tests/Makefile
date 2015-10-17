@@ -7,6 +7,8 @@ all: ${PDF_FILES}
 check: ${TEX_FILES} ../fkoehler.sty
 	chktex -W
 	chktex -q ${TEX_FILES}
+lacheck:
+	../tools/lacheck.sh $^
 %.pdf: %.tex ../fkoehler.sty
 	latexmk --use-make -${LATEXMK_BACKEND} $<
 

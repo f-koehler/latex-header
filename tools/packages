@@ -11,6 +11,7 @@ ifluatex
 ifxetex
 koma-script
 l3­pack­ag
+lacheck
 latex
 latex-bin
 latexmk

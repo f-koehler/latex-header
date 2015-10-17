@@ -11,6 +11,7 @@ script:
     - cd tests
     - make
     - make check
+    - make lacheck
 cache:
     directories:
         - ~/tl
