@@ -4,6 +4,7 @@ amsmath
 braket
 chktex
 ctablestack
+eso-pic
 etoolbox
 euenc
 filehook

@@ -10,7 +10,7 @@ check: ${TEX_FILES} ../fkoehler.sty
 lacheck:
 	../tools/lacheck.sh $^
 %.pdf: %.tex ../fkoehler.sty
-	latexmk --use-make -${LATEXMK_BACKEND} $<
+	latexmk -interaction=nonstopmode --use-make -${LATEXMK_BACKEND} $<
 
 .PHONY: clean
 clean:

@@ -7,7 +7,7 @@ fi
 
 TLMGR=$(command -v tlmgr)
 if [[ ! -z ${TLMGR} ]]; then
-    echo "found local tlmgr \"${TLMGR}\", performe update ..."
+    echo "found local tlmgr \"${TLMGR}\", perform update ..."
     tlmgr update --all --self
     exit 0
 fi
