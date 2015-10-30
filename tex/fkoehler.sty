@@ -58,6 +58,10 @@
   separate-uncertainty=true,
 ]{siunitx}
 
+% norm and abs
+\DeclareDocumentCommand\abs{m}{{\left|{#1}\right|}}
+\DeclareDocumentCommand\norm{m}{{\left\Vert{#1}\right\Vert}}
+
 % decorators for scalars, vectors, matrices
 \DeclareDocumentCommand\trans{m}{{#1}^{\mathsf{T}}}
 \DeclareDocumentCommand\conj{m}{{#1}^*}
