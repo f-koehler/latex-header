@@ -1,0 +1,30 @@
+\NeedsTeXFormat{LaTeX2e}[2015/10/01]
+\ProvidesPackage{fk}
+
+\RequirePackage{fk-common}
+\RequirePackage{fk-math}
+\RequirePackage{fk-media}
+\RequirePackage{fk-qm}
+
+\ExplSyntaxOn{}
+
+% integrate latex with git
+\RequirePackage{gitinfo2}
+
+% add todos to document
+\RequirePackage[
+  colorinlistoftodos=true,
+]{todonotes}
+
+% set up unit typesetting
+\RequirePackage[
+  binary-units=true,
+  exponent-product=\cdot,
+  output-product=\cdot,
+  range-phrase=\ifmmode\mathbin{-}\else\thinspace\textendash\thinspace\fi,
+  separate-uncertainty=true,
+]{siunitx}
+
+\ExplSyntaxOff{}
+
+\endinput

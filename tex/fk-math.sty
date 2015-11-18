@@ -1,36 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}[2015/10/01]
-\ProvidesPackage{fkoehler}
+\ProvidesPackage{fk-math}
 
 \RequirePackage{xparse}
 \ExplSyntaxOn{}
-
-% packages to determine which LaTeX implementation is used
-\RequirePackage{ifluatex}
-\RequirePackage{ifxetex}
-
-% integrate latex with git
-\RequirePackage{gitinfo2}
-
-% add todos to document
-\RequirePackage[
-  colorinlistoftodos=true,
-]{todonotes}
-
-% booktabs for quality tables
-\RequirePackage{booktabs}
-
-% tikz for drawing
-\RequirePackage{tikz}
-
-% links
-\RequirePackage{hyperref}
-\RequirePackage{url}
-
-% captions
-\RequirePackage{caption}
-
-% dummy texts for testing
-\RequirePackage{lipsum}
 
 % packages from the AMS
 \RequirePackage{amsmath}
@@ -45,18 +17,6 @@
   partial=upright,
   sans-style=italic,
 ]{unicode-math}
-
-% dirac notation
-\RequirePackage{braket}
-
-% set up unit typesetting
-\RequirePackage[
-  binary-units=true,
-  exponent-product=\cdot,
-  output-product=\cdot,
-  range-phrase=\ifmmode\mathbin{-}\else\thinspace\textendash\thinspace\fi,
-  separate-uncertainty=true,
-]{siunitx}
 
 % norm and abs
 \DeclareDocumentCommand\abs{m}{{\left|{#1}\right|}}
@@ -136,5 +96,3 @@
 \DeclareMathOperator*{\sup}{sup}
 
 \ExplSyntaxOff{}
-
-\endinput

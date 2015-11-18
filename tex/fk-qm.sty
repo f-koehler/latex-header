@@ -1,0 +1,14 @@
+\NeedsTeXFormat{LaTeX2e}[2015/10/01]
+\ProvidesPackage{fk-qm}
+
+\RequirePackage{xparse}
+\ExplSyntaxOn{}
+
+% dirac notation
+\RequirePackage{braket}
+
+% commutators, etc.
+\DeclareDocumentCommand\comm{mm}{{\left[{#1}, {#2}\right]}}
+\DeclareDocumentCommand\acomm{mm}{{\left\{{#1}, {#2}\right\}}}
+
+\ExplSyntaxOff{}
