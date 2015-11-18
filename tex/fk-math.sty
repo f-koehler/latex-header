@@ -56,7 +56,10 @@
 \DeclareDocumentCommand\iu{}{\mathcal{i}}
 
 % differentials
-\DeclareDocumentCommand\diff{o}{\IfNoValueTF{#1}{\mathup{d}}{\mathup{d}^{#1}}}
+\DeclareDocumentCommand\diff{o}{\IfNoValueTF{#1}{\symup{d}}{\symup{d}^{#1}}}
+
+% special functions
+\DeclareDocumentCommand\heaviside{}{\symup{\Theta}}
 
 % trigonometric and hyperbolic functions
 \DeclareDocumentCommand\cos{}{\operatorname{cos}}
