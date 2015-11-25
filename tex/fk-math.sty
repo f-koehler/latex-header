@@ -32,7 +32,7 @@
 % declare commands for vectors and matrices
 \AtBeginDocument{%
   \DeclareDocumentCommand\mat{m}{{\mathbfit{#1}}}
-  \DeclareDocumentCommand\vec{m}{{\mathbfit{#1}}}
+  \DeclareDocumentCommand\Vec{m}{{\mathbfit{#1}}}
 }
 
 % decorated versions of matrices
@@ -41,6 +41,12 @@
 \DeclareDocumentCommand\matHerm{m}{\herm{\mat{#1}}}
 \DeclareDocumentCommand\matDaggered{m}{\daggered{\mat{#1}}}
 \DeclareDocumentCommand\matInv{m}{\inv{\mat{#1}}}
+
+% some matrix operations
+\DeclareDocumentCommand\Tr{}{\operatorname{Tr}}
+\DeclareDocumentCommand\det{}{\operatorname{det}}
+\DeclareDocumentCommand\diag{}{\operatorname{diag}}
+\DeclareDocumentCommand\ker{}{\operatorname{ker}}
 
 % decorated versions of vectors
 \DeclareDocumentCommand\vecTrans{m}{\trans{\vec{#1}}}
