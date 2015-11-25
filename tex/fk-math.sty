@@ -55,11 +55,16 @@
 }
 \DeclareDocumentCommand\iu{}{\mathcal{i}}
 
+% scalar product
+\DeclareDocumentCommand\innerProd{mm}{{\langle{\,{#1},{#2}}\rangle}}
+\DeclareDocumentCommand\innerProdB{mm}{{\left({\,{#1}|{#2}}\right)}}
+
 % differentials
 \DeclareDocumentCommand\diff{o}{\IfNoValueTF{#1}{\symup{d}}{\symup{d}^{#1}}}
 
 % special functions
-\DeclareDocumentCommand\heaviside{}{\symup{\Theta}}
+\DeclareDocumentCommand\heaviside{}{{\symup{\Theta}}}
+\DeclareDocumentCommand\kronecker{}{{\symup{\delta}}}
 
 % trigonometric and hyperbolic functions
 \DeclareDocumentCommand\cos{}{\operatorname{cos}}
