@@ -23,6 +23,7 @@ latex-bin
 latexmk
 lipsum
 lm-math
+lmodern
 lualatex-math
 luaotfload
 luatexbase
