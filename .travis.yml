@@ -1,12 +1,20 @@
 language: perl
+sudo: false
 env:
     - LATEXMK_BACKEND=xelatex
     - LATEXMK_BACKEND=lualatex
+
+cache:
+    directories:
+        - ~/tl
+
 before_install:
     - tools/travis-tl.sh
     - export PATH=~/tl/bin/x86_64-linux:$PATH
+
 install:
     - tlmgr install $(<tools/packages) || true
+
 script:
     - tools/setup-hooks.sh
     - git checkout
@@ -14,6 +22,3 @@ script:
     - make
     - make check
     - make lacheck
-cache:
-    directories:
-        - ~/tl

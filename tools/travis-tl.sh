@@ -22,12 +22,12 @@ cd tl-installer
 cat > travis.profile << EOF
 selected_scheme scheme-minimal
 TEXDIR ${HOME}/tl
-TEXMFCONFIG ${HOME}/.texlive2015/texmf-config
+TEXMFCONFIG ${HOME}/.texlive2016/texmf-config
 TEXMFHOME ${HOME}/texmf
 TEXMFLOCAL ${HOME}/tl/texmf-local
 TEXMFSYSCONFIG ${HOME}/tl/texmf-config
 TEXMFSYSVAR ${HOME}/tl/texmf-var
-TEXMFVAR ${HOME}/.texlive2015/texmf-var
+TEXMFVAR ${HOME}/.texlive2016/texmf-var
 binary_x86_64-linux 1
 collection-basic 1
 in_place 0
