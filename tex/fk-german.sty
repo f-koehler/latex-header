@@ -1,0 +1,16 @@
+\NeedsTeXFormat{LaTeX2e}[2015/10/01]
+\ProvidesPackage{fk-german}
+
+\RequirePackage{fk-common}
+
+\ifluatex%
+  \usepackage{polyglossia}
+  \setmainlanguage{german}
+\else
+  \ifxetex%
+    \usepackage{polyglossia}
+    \setmainlanguage{german}
+  \else
+    \usepackage[german]{babel}
+  \fi
+\fi
