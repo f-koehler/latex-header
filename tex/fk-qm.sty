@@ -21,9 +21,15 @@
 \DeclareDocumentCommand\spinD{}{\downarrow}
 
 % expectation value
-\DeclareDocumentCommand\ev{m}{{\left<{#1}\right>}}
+\DeclareDocumentCommand\ev{m}{{\braket{#1}}}
 
 % normal ordering
 \DeclareDocumentCommand\normord{m}{\mathrel{\mathop{:}}\mathrel{#1}\mathrel{\mathop{:}}}
+
+% second quantization operators with indices
+\ExplSyntaxOff{}
+\DeclareDocumentCommand\creator{mm}{{{#1}^{†}_{#2}}}
+\DeclareDocumentCommand\annihilator{mm}{{{#1}^{\vphantom{†}}_{#2}}}
+\ExplSyntaxOn{}
 
 \ExplSyntaxOff{}
