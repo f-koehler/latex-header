@@ -24,7 +24,8 @@
 \DeclareDocumentCommand\ev{m}{{\braket{#1}}}
 
 % normal ordering
-\DeclareDocumentCommand\normord{m}{\mathrel{\mathop{:}}\mathrel{#1}\mathrel{\mathop{:}}}
+% \DeclareDocumentCommand\normord{m}{\mathrel{\mathop{:}}\mathrel{#1}\mathrel{\mathop{:}}}
+\DeclareDocumentCommand\normord{m}{\mathop{:}\!\!\mathrel{#1}\!\!\mathop{:}}
 
 % second quantization operators with indices
 \ExplSyntaxOff{}
