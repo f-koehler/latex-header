@@ -6,7 +6,7 @@
 
 % packages from the AMS
 \RequirePackage{amsmath}
-\RequirePackage{amssymb}
+% \RequirePackage{amssymb}
 \RequirePackage{amsthm}
 
 % use unicode in math typesetting
@@ -67,6 +67,13 @@
 
 % differentials
 \DeclareDocumentCommand\diff{o}{\IfNoValueTF{#1}{\symup{d}}{\symup{d}^{#1}}}
+\DeclareDocumentCommand\difff{mo}{%
+  \IfNoValueTF{#2}{%
+    \frac{\diff{}}{\diff{#1}}
+  }{%
+    \frac{\diff{#2}}{\diff{#1}}
+  }
+}
 
 % special functions
 \DeclareDocumentCommand\heaviside{}{{\symup{\Theta}}}
